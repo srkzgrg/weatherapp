@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <title>WeatherApp</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="city" placeholder="City">
+        <button>Get Weather</button>
+    </form>
+    <% if(city !== null){ %>
+        <p>Weather: <%= city %></p>
+    <% } %>
+</body>
+</html>
