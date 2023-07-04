@@ -5,15 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./style.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <script src="https://kit.fontawesome.com/00cc85fd4a.js" crossorigin="anonymous"></script>
     <title>WeatherApp</title>
 </head>
 <body>
-    <form action="/" method="post">
-        <input type="text" name="city" placeholder="City">
-        <button>Get Weather</button>
-    </form>
-    <% if(city !== null){ %>
-        <p>Weather: <%= city %></p>
+    <nav>
+    <h1 id="logo"><span class="orange">Weather</span>App</h1>
+    <!-- ------------------------------- Search -------------------------------- -->
+    <div id="searchbox">
+        <div class="box">
+            <form name="search" action="/" method="GET">
+                <input type="text" class="input" name="city">
+            </form>
+            <i class="fas fa-search"></i>
+        </div>
+        </div>
+    </nav>
+    <!-- ------------------------------- Weather -------------------------------- -->
+    <% if(city !== null && weather !== null){ %>
+        <div id="city-container">
+        <p><span class="orange">City:</span> <%= city %></p>
+        </div>
+        <div id="forecast-container">
+        <div class="container">
+            <p>Temperature: <%= weather.current.temp_c %></p>
+            <p>Wind: <%= weather.current.wind_kph %></p>
+            <p>Humidity: <%= weather.current.humidity %></p>
+            <p>Cloud: <%= weather.current.cloud %></p>
+            <p>Condition: <%= weather.current.condition.text %></p>
+            <p>UV: <%= weather.current.uv %></p>
+        </div>
+        <div class="forecast">
+            <div class="day">
+            <img src="img/weather_icons/<%= day0icon %>.png" width="100%" height="100%">
+            <p><%= weather.forecast.forecastday[0].day.maxtemp_c %> &deg;C</p>
+            <p><%= weather.forecast.forecastday[0].date %></p>
+            </div>
+            <div class="day">
+                <img src="img/weather_icons/<%= day1icon %>.png" width="100%" height="100%">
+                <p><%= weather.forecast.forecastday[1].day.maxtemp_c %> &deg;C</p>
+                <p><%= weather.forecast.forecastday[1].date %></p>
+            </div>
+            <div class="day">
+                <img src="img/weather_icons/<%= day2icon %>.png" width="100%" height="100%">
+                <p><%= weather.forecast.forecastday[2].day.maxtemp_c %> &deg;C</p>
+                <p><%= weather.forecast.forecastday[2].date %></p>
+            </div>
+            <div class="day">
+                <img src="img/weather_icons/<%= day3icon %>.png" width="100%" height="100%">
+                <p><%= weather.forecast.forecastday[3].day.maxtemp_c %> &deg;C</p>
+                <p><%= weather.forecast.forecastday[3].date %></p>
+            </div>
+            <div class="day">
+                <img src="img/weather_icons/<%= day4icon %>.png" width="100%" height="100%">
+                <p><%= weather.forecast.forecastday[4].day.maxtemp_c %> &deg;C</p>
+                <p><%= weather.forecast.forecastday[4].date %></p>
+            </div>
+        </div>
+        <div>
     <% } %>
+    
 </body>
 </html>
