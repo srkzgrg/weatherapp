@@ -28,38 +28,56 @@
         </div>
         <div id="forecast-container">
         <div class="container">
-            <p>Temperature: <%= weather.current.temp_c %></p>
-            <p>Wind: <%= weather.current.wind_kph %></p>
-            <p>Humidity: <%= weather.current.humidity %></p>
-            <p>Cloud: <%= weather.current.cloud %></p>
-            <p>Condition: <%= weather.current.condition.text %></p>
-            <p>UV: <%= weather.current.uv %></p>
+            <p class="prop">Temperature</p>
+            <p><%= weather.current.temp_c %> &deg;C</p>
+            <hr>
+            <p class="prop">Wind</p>
+            <p><%= weather.current.wind_kph %>  km/h</p>
+            <hr>
+            <p class="prop">Humidity</p>
+            <p><%= weather.current.humidity %> %</p>
+            <hr>
+            <p class="prop">Condition</p>
+            <p><%= weather.current.condition.text %></p>
+            <hr>
+            <p class="prop">UV index</p>
+            <p><%= weather.current.uv %></p>
         </div>
         <div class="forecast">
             <div class="day">
+            <p class="date"><%= weather.forecast.forecastday[0].date %></p>
             <img src="img/weather_icons/<%= day0icon %>.png" width="100%" height="100%">
             <p><%= weather.forecast.forecastday[0].day.maxtemp_c %> &deg;C</p>
-            <p><%= weather.forecast.forecastday[0].date %></p>
+            <p class="minc"><%= weather.forecast.forecastday[0].day.mintemp_c %> &deg;C</p>
+          
             </div>
             <div class="day">
+                <p class="date"><%= weather.forecast.forecastday[1].date %></p>
                 <img src="img/weather_icons/<%= day1icon %>.png" width="100%" height="100%">
                 <p><%= weather.forecast.forecastday[1].day.maxtemp_c %> &deg;C</p>
-                <p><%= weather.forecast.forecastday[1].date %></p>
+                <p class="minc"><%= weather.forecast.forecastday[1].day.mintemp_c %> &deg;C</p>
+               
             </div>
             <div class="day">
+                <p class="date"><%= weather.forecast.forecastday[2].date %></p>
                 <img src="img/weather_icons/<%= day2icon %>.png" width="100%" height="100%">
                 <p><%= weather.forecast.forecastday[2].day.maxtemp_c %> &deg;C</p>
-                <p><%= weather.forecast.forecastday[2].date %></p>
+                <p class="minc"><%= weather.forecast.forecastday[2].day.mintemp_c %> &deg;C</p>
+               
             </div>
             <div class="day">
+                <p class="date"><%= weather.forecast.forecastday[3].date %></p>
                 <img src="img/weather_icons/<%= day3icon %>.png" width="100%" height="100%">
                 <p><%= weather.forecast.forecastday[3].day.maxtemp_c %> &deg;C</p>
-                <p><%= weather.forecast.forecastday[3].date %></p>
+                <p class="minc"><%= weather.forecast.forecastday[3].day.mintemp_c %> &deg;C</p>
+                
             </div>
             <div class="day">
+                <p class="date"><%= weather.forecast.forecastday[4].date %></p>
                 <img src="img/weather_icons/<%= day4icon %>.png" width="100%" height="100%">
                 <p><%= weather.forecast.forecastday[4].day.maxtemp_c %> &deg;C</p>
-                <p><%= weather.forecast.forecastday[4].date %></p>
+                <p class="minc"><%= weather.forecast.forecastday[4].day.mintemp_c %> &deg;C</p>
+               
             </div>
         </div>
         <div>
