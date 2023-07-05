@@ -77,10 +77,11 @@
                 <img src="img/weather_icons/<%= day4icon %>.png" width="100%" height="100%">
                 <p><%= weather.forecast.forecastday[4].day.maxtemp_c %> &deg;C</p>
                 <p class="minc"><%= weather.forecast.forecastday[4].day.mintemp_c %> &deg;C</p>
-               
             </div>
         </div>
         <div>
+    <% } else { %>
+        <h2 id="errormsg">A település nem található!</h2>
     <% } %>
     
 </body>

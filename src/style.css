@@ -31,7 +31,7 @@ body{
     background-color: rgb(52, 52, 52);
     box-shadow: 5px 5px 5px rgb(27, 27, 27);
     width: max-content;
-    padding: 3px 10px;
+    padding: 3px 15px;
     margin-left: 15px;
     border-radius: 15px;
 }
@@ -157,4 +157,11 @@ nav{
     margin-right: 10px;
     width: 90%;
   }
+}
+
+/* ---------------------------------- Error --------------------------------- */
+
+#errormsg{
+  margin-left: 15px;
+  margin-top: 5%;
 }
